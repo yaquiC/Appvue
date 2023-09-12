@@ -43,8 +43,7 @@ export interface PaginationUser {
     total: number;
     totalPages: number;
     nextPage:number;
-    prevPag:number;
+    prevPage:number;
     currentPage:number
-    empty: true;
 }
 

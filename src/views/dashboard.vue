@@ -1,5 +1,5 @@
 <template>
-    <h1 class="z-20 absolute text-center  w-full bg-gray-800">BIENVENIDO</h1>
+    
     <DashboardComponent></DashboardComponent>
 </template>
 

@@ -15,7 +15,7 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr v-for="users in user" class="bg-gray-800">
+                  <tr v-for="users in user" :key="users.id" class="bg-gray-800">
                       <td class="p-3">{{ users.name }}</td>
                       <td class="p-3">{{ users.lastName }}</td>
                       <td class="p-3">{{ users.age }}</td>
@@ -35,8 +35,8 @@
                   <!--gregar mas filas-->
               </tbody>
           </table>
-      </div>
-      <paginate :total="paginates.total"
+          <paginate 
+                  :total="paginates.total"
                   :totalPages="paginates.totalPages"
                   :pages="pages"
                   :next="paginates.nextPag"
@@ -44,6 +44,8 @@
                   :currentPage="paginates.currentPage"
                   :totalPag="paginates.totalPages"
                   @method="ChangePage"></paginate>
+      </div>
+      
   </div>
 </template>
 
@@ -64,11 +66,11 @@ const pagination = UseUserStore();
 
 
 const ChangePage = (page: string | number) => {
-  pagination.GetUsers(Number(page), 5);
+  pagination.GetUsers(Number(page), 4);
 }
 
 onMounted(async () => {
-  pagination.GetUsers(1, 5);
+  pagination.GetUsers(1, 4);
   await GetAllUser()
 });
 
